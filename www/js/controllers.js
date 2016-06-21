@@ -156,7 +156,7 @@ angular.module('app.controllers', [])
 })
 
 .controller('dietasCtrl', function($scope) {
-
+  
 })
    
 .controller('lugaresCtrl', function($scope) {
@@ -220,8 +220,53 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('secciNDeDietasCtrl', function($scope) {
-
+.controller('secciNDeDietasCtrl', function($scope, $ionicPopup) {
+  var ingredientes = "1 cucharadita de aceite vegetal (1 cucharada extra si los fríes)<br>"+
+  ".5 libras de carne molida de pollo sin grasa<br>½ cebolla picada<br>1 zanahoria rallada<br>"+
+  "¼ de col rallada<br>1 diente de ajo picado finamente<br>1 cucharada de salsa de ostras<br>"+
+  "1 cucharada de soya<br>½ cucharadita de jengibre en polvo<br>12 envolturas de egg rolls<br>"+
+  "Opcional: 1 cucharada de cilantro fresco";
+  var instrucciones = "Calienta una cucharada de aceite vegetal en un sartén mediano. Agrega el pollo, cebolla, y ajo y cocina por 3-5 minutos hasta que se empiecen a dorar. Agrega la col y la zanahoria y cocina por 3-5 minutos más hasta que se empiecen a suavizar. Vierte y mezcla la salsa de ostras, alza de soya, y jengibre en polvo y cocina por 2-3 minutos para que se combinen los sabores. Asegúrate de que el pollo este completamente cocido.<br>Deja que la mezcla se enfrié un poco. Opcional: Mezcla con el cilantro.<br>Para armar los rollos, pon ⅓ de taza de la mezcla en el centro de cada envoltura. Dobla como indiquen las instrucciones en el paquete – básicamente jala una esquina sobre el relleno, dobla los lados hacia adentro y enrolla. Moja la esquina con agua y sella el rollo.<br>1er opción Hornea los rollos: Precalienta el horno a 400 grados. Hornea los rollos por 12-15 minutos hasta que se empiecen a dorar, voltéalos una vez. Para que queden más crujientes, ponlos bajo la parrilla por 1-2 minutos de cada lado. <br> 2da opción –Fríe los rollos: Calienta una cucharada de aceite vegetal sobre fuego medio. Agrega 4-5 rollos a la vez y fríe. Voltéalos con pinzas cuando sea necesario. Ten cuidado porque se cocinan muy rápido y se pueden quemar muy fácilmente. Voltéalos en cuanto se empiecen a dorar y a tener burbujas. Son de 2 puntos cada uno, o 7 puntos por 3 si los fríes.";
+  var informacion = "Tamaño de la Porción: 3 egg rolls<br>Calorías: 268<br>Grasa: 5.7<br>Carbohidrátos: 37<br>Fibra: 2<br>Proteína: 18";
+  var ingredientes2 = "1.5 libras de pechugas de pollo (aprox. 4 onzas cada una), delgadas<br>½ taza de pan molido integral<br>4 claras de huevo<br>1 cucharada de albahaca fresca picada<br>1 cucharada de orégano<br>1 cucharada de ajo en polvo<br>½ taza de queso parmesano rallado<br>Sal y pimienta recién molida";
+  var instrucciones2 = "Precalienta el horno a 400 grados.<br>En un tazón mezcla el pan molido, albahaca, orégano, ajo en polvo, queso parmesano, sal, y pimienta.<br>Pon las claras de huevo en otro tazón.<br>Espolvorea las pechugas con sal y pimienta. Sumérgelas en huevo y deja que escurra. Con cuidado revuelca las pechugas en el pan molido hasta que queden cubiertas. Rocía una charola para hornear con aceite antiadherente y coloca las pechugas en la charola.<br>Hornea por 20 minutos hasta que el pollo quede completamente cocido.";
+  var informacion2 = "Tamaño de la Porción: una pieza de pollo<br>Calorías: 204<br>Grasa: 4.5<br>Carbohidrátos: 5.5<br>Fibra: 1<br>Proteína: 33";
+  $scope.primera_ingredientes = function(){
+    $ionicPopup.alert({
+      title: 'Ingredientes',
+      template: ingredientes
+    });
+  };
+  $scope.primera_instrucciones = function(){
+    $ionicPopup.alert({
+      title: 'Instrucciones',
+      template: instrucciones
+    });
+  };
+  $scope.primera_informacion = function(){
+    $ionicPopup.alert({
+      title: 'Información',
+      template: informacion
+    });
+  };
+  $scope.segunda_ingredientes = function(){
+    $ionicPopup.alert({
+      title: 'Ingredientes',
+      template: ingredientes2
+    });
+  };
+  $scope.segunda_instrucciones = function(){
+    $ionicPopup.alert({
+      title: 'Instrucciones',
+      template: instrucciones2
+    });
+  };
+  $scope.segunda_informacion = function(){
+    $ionicPopup.alert({
+      title: 'Información',
+      template: informacion2
+    });
+  };
 })
    
 .controller('ubicacionesCtrl', function($scope) {
